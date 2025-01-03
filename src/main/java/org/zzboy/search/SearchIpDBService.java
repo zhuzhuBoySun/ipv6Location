@@ -2,11 +2,10 @@ package org.zzboy.search;
 
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.lang.Assert;
 import org.zzboy.search.domain.IpRegion;
-import org.zzboy.util.Ipv6Util;
 import org.zzboy.search.domain.Ipv6DB;
-
-import java.io.File;
+import org.zzboy.util.Ipv6Util;
 
 public class SearchIpDBService {
 
@@ -29,7 +28,7 @@ public class SearchIpDBService {
      * @return
      */
     public IpRegion searchIpv6Region(String ip){
-        //todo ipv6 校验
+        Assert.isTrue(Ipv6Util.validateIpv6(ip), "ipv6格式不正确");
         ip =Ipv6Util.parseIpv6(ip);
         long ipv6ToLong = Ipv6Util.ipv6ToLong(ip);
         return ipv6DB.searchRegion(ipv6ToLong);
@@ -41,7 +40,7 @@ public class SearchIpDBService {
      * @return
      */
     public String searchIpv6RegionStr(String ip){
-        //todo ipv6 校验
+        Assert.isTrue(Ipv6Util.validateIpv6(ip), "ipv6格式不正确");
         long ipv6ToLong = Ipv6Util.ipv6ToLong(ip);
         return ipv6DB.searchRegionString(ipv6ToLong);
     }

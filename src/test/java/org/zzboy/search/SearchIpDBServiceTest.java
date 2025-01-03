@@ -25,7 +25,7 @@ public class SearchIpDBServiceTest {
     @Test
     public void searchIpv6RegionStr() {
         SearchIpDBService searchIpDBService = new SearchIpDBService();
-        IpRegion ipRegion = searchIpDBService.searchIpv6Region("240e:47f:2200:32e8");
+        IpRegion ipRegion = searchIpDBService.searchIpv6Region("240e:47f:2200:32e8::");
         System.out.println(ipRegion);
     }
 

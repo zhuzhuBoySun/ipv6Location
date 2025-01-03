@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
@@ -41,7 +40,7 @@ public class Ipv6DB implements Serializable {
         try (InputStream inputStream = Files.newInputStream(Paths.get(path))){
             return IpDBUtil.bytestoIpv6DB(inputStream);
         }catch (IOException e){
-            throw new RuntimeException("ipv6段文件读取失败",e);
+            throw new IllegalArgumentException("ipv6段文件读取失败",e);
         }
     }
 
