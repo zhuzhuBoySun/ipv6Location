@@ -6,7 +6,7 @@
 
     <groupId>org.zzboy</groupId>
     <artifactId>ipv6Location</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-RC01</version>
 
     <dependencies>
         <dependency>

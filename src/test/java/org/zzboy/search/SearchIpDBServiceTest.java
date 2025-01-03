@@ -36,7 +36,7 @@ public class SearchIpDBServiceTest {
     @Test
     public void verify() throws IOException {
         String yyyyMMdd = DateUtil.format(DateUtil.date(), "yyyyMMdd");
-        List<String> ipv6List = FileUtil.readLines("\\data\\ipHome\\"+yyyyMMdd+"\\ipv6_flie.txt", "utf-8");
+        List<String> ipv6List = FileUtil.readLines("\\data\\ipHome\\"+yyyyMMdd+"\\ipv6_m3_split_new_sort.txt", "utf-8");
         Ipv6Util.sortIpv6ForText(ipv6List);
         for (int i = 0; i < ipv6List.size(); i++) {
             if (i>0 && i<ipv6List.size()-1){
@@ -50,8 +50,8 @@ public class SearchIpDBServiceTest {
             }
         }
         Ipv6Make.createDB("\\data\\ipHome\\"+yyyyMMdd+"\\ipv6_m2_split.txt");
-        Ipv6DB ipv6DB =Ipv6DB.init("\\data\\ipHome\\"+yyyyMMdd+"\\ipv6_m2_split_sort.db");
-        System.out.println(verifyDB(ipv6DB, "\\data\\ipHome\\" + yyyyMMdd + "\\ipv6_flie.txt"));
+        Ipv6DB ipv6DB =Ipv6DB.init("\\data\\ipHome\\"+yyyyMMdd+"\\ipv6_m3_split_new_sort.db");
+        System.out.println(verifyDB(ipv6DB, "\\data\\ipHome\\" + yyyyMMdd + "\\ipv6_m3_split_new_sort.txt"));
     }
 
     /**
