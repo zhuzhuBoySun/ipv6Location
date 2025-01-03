@@ -17,12 +17,10 @@ import java.util.regex.Pattern;
  */
 public class Ipv6Util {
 
-
     /**
      * ipv6转换long 取前64位
      **/
     public static long ipv6ToLong(String ipv6){
-        //todo 检查是否为有效的IPv6地址
         String[] ipv6Split = ipv6.split(Constant.IPV6_SPLIT);
         long result = 0;
         // 只需要前四组
@@ -214,7 +212,7 @@ public class Ipv6Util {
                 try {
                     return Long.compare(ipv6ToLong(ip1.split("\\|")[0]),ipv6ToLong(ip2.split("\\|")[0]));
                 } catch (Exception e) {
-                    // 如果IPv6地址格式不正确，抛出异常或进行其他处理
+                    // 如果格式不正确，抛出异常或进行其他处理
                     throw new RuntimeException(StrUtil.format("Invalid IPv6 address ip1 = {%s}, ip2 = {%s}",ip1,ip2), e);
                 }
             }
@@ -242,5 +240,24 @@ public class Ipv6Util {
         return false;
     }
 
+    /**
+     * 验证ipv6是否准确 2001:288:4000::
+     * @param ipv6
+     * @return
+     */
+    public static boolean validateIpv6(String ipv6) {
+        if (StrUtil.isBlank(ipv6)) {
+            return false;
+        }
+        try {
+            Pattern pattern = Pattern.compile(Constant.ipv6Regex);
+            if (pattern.matcher(ipv6).matches()) {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
 
 }
