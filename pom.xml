@@ -4,9 +4,38 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.zzboy</groupId>
+    <groupId>io.github.zhuzhuboysun</groupId>
     <artifactId>ipv6Location</artifactId>
-    <version>1.0.0-RC01</version>
+    <version>1.0.1-RC01</version>
+    <packaging>jar</packaging>
+    <name>ipv6Location</name>
+    <description> ipv6Location is a tool for getting the location of IPv6 addresses. </description>
+    <url>https://github.com/zhuzhuBoySun/ipv6Location</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ipv6Location</id>
+            <name>ipv6Location</name>
+            <email>zhujusen@gmail.com</email>
+            <roles>
+                <role>Project Manager</role>
+                <role>Architect</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>https://github.com/zhuzhuBoySun/ipv6Location.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:zhuzhuBoySun/ipv6Location.git</developerConnection>
+        <url>https://github.com/zhuzhuBoySun/ipv6Location</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -28,5 +57,63 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            &lt;!&ndash;   central发布插件    &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.sonatype.central</groupId>-->
+<!--                <artifactId>central-publishing-maven-plugin</artifactId>-->
+<!--                <version>0.4.0</version>-->
+<!--                <extensions>true</extensions>-->
+<!--                <configuration>-->
+<!--                    <publishingServerId>ipv6Location</publishingServerId>-->
+<!--                    <tokenAuth>true</tokenAuth>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            &lt;!&ndash;   source源码插件   官方要求 &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-source-plugin</artifactId>-->
+<!--                <version>2.2.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>attach-sources</id>-->
+<!--                        <goals>-->
+<!--                            <goal>jar-no-fork</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--            &lt;!&ndash;   javadoc插件  官方要求  &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <version>2.9.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>attach-javadocs</id>-->
+<!--                        <goals>-->
+<!--                            <goal>jar</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-gpg-plugin</artifactId>-->
+<!--                <version>1.5</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>sign-artifacts</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>sign</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>
