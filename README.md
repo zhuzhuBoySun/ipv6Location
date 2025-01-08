@@ -11,4 +11,4 @@ ipv6地址查询工具
     2. 导入到IDE中
     3. 以下代码块为查询方式:
         SearchIpDBService searchIpDBService = new SearchIpDBService();
-        IpRegion ipRegion = searchIpDBService.searchIpv6Region("240e:47f:2200:32e8");
+        IpRegion ipRegion = searchIpDBService.searchIpv6Region("240e:47f:2200:32e8::");

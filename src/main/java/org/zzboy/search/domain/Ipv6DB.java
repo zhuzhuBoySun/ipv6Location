@@ -45,6 +45,19 @@ public class Ipv6DB implements Serializable {
     }
 
     /**
+     * 初始化ip库
+     *
+     * @param inputStream ipv6段文件流
+     */
+    public static Ipv6DB init(InputStream inputStream) {
+        try (InputStream inputStreamTemp = inputStream) {
+            return IpDBUtil.bytestoIpv6DB(inputStreamTemp);
+        } catch (IOException e) {
+            throw new IllegalArgumentException("ipv6段文件读取失败", e);
+        }
+    }
+
+    /**
      * 根据ip查询地理位置 国家|省|城市
      * @param ip
      */

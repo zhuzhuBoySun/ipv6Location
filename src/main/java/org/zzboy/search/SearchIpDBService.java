@@ -1,7 +1,6 @@
 package org.zzboy.search;
 
 
-import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.lang.Assert;
 import org.zzboy.search.domain.IpRegion;
 import org.zzboy.search.domain.Ipv6DB;
@@ -12,7 +11,7 @@ public class SearchIpDBService {
     private final Ipv6DB ipv6DB;
 
     public SearchIpDBService() {
-        this.ipv6DB = Ipv6DB.init(FileUtil.getAbsolutePath(this.getClass().getClassLoader().getResource("ipv6.db").getPath()));
+        this.ipv6DB = Ipv6DB.init(this.getClass().getClassLoader().getResourceAsStream("ipv6.db"));
     }
 
     /**
