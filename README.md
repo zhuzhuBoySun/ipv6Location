@@ -6,6 +6,12 @@ ipv6地址查询工具
     1. 支持ipv6地址查询地域
 ## 环境要求:
     java 8 运行环境
+## maven依赖:
+    <dependency>
+        <groupId>io.github.zhuzhuboysun</groupId>
+        <artifactId>ipv6Location</artifactId>
+        <version>1.0.1-RC01</version>
+    </dependency>
 ## 使用方法:
     1. 下载项目源码
     2. 导入到IDE中
